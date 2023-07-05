@@ -1,17 +1,27 @@
-let score = 0;
-let upgradeCost = 10;
+const targetNumber = Math.floor(Math.random() * 100) + 1;
+let attempts = 0;
 
-function increaseScore() {
-  score++;
-  document.getElementById("scoreValue").textContent = score;
-}
+function checkGuess() {
+  const guess = parseInt(document.getElementById("guessInput").value);
+  
+  if (isNaN(guess)) {
+    setMessage("Please enter a valid number.");
+    return;
+  }
 
-function buyUpgrade() {
-  if (score >= upgradeCost) {
-    score -= upgradeCost;
-    upgradeCost *= 2;
-    document.getElementById("scoreValue").textContent = score;
-    document.getElementById("upgradeCost").textContent = upgradeCost;
-    // Apply upgrade effect here
+  attempts++;
+
+  if (guess === targetNumber) {
+    setMessage(`Congratulations! You guessed the correct number in ${attempts} attempts.`);
+    document.getElementById("guessInput").disabled = true;
+  } else if (guess < targetNumber) {
+    setMessage("Try a higher number.");
+  } else {
+    setMessage("Try a lower number.");
   }
 }
+
+function setMessage(message) {
+  document.getElementById("message").textContent = message;
+}
+
