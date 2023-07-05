@@ -6,14 +6,10 @@
 </head>
 <body>
   <h1>Cookie Clicker</h1>
-  <div class="cookie-container">
-    <img id="cookie" src="cookie.png" alt="Cookie" />
-  </div>
-  <p>Score: <span id="score">0</span></p>
-  <div class="upgrades-container">
-    <button id="upgradeBtn" disabled>Upgrade (Cost: 10)</button>
-    <p>Upgrade Level: <span id="upgradeLevel">1</span></p>
-  </div>
+  <div id="cookie" onclick="increaseScore()"></div>
+  <div id="score">Score: <span id="scoreValue">0</span></div>
+  <button onclick="buyUpgrade()">Buy Upgrade (Cost: <span id="upgradeCost">10</span>)</button>
+
   <script src="script.js"></script>
 </body>
 </html>
