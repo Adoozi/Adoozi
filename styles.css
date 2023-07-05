@@ -1,0 +1,28 @@
+.cookie-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+#cookie {
+  width: 200px;
+  cursor: pointer;
+}
+
+.upgrades-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#upgradeBtn {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#upgradeBtn:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
